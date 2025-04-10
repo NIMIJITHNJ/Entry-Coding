@@ -1,8 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
-def resume(request):
-    resumeData = {
+def resume(request):                                            #View function to render the resume page
+    resumeData = {                                              #Dictionary containing resume data to pass to the HTML template
         'name': 'Nimijith Nimmi Jayan',
         'role': 'Python Developer',
         'contact': {
@@ -31,4 +30,4 @@ def resume(request):
         'gender': 'male',
         'references': 'Available upon request',
     }
-    return render(request, 'resume.html', resumeData)
+    return render(request, 'resume.html', resumeData)           #To render the HTML template with resume data

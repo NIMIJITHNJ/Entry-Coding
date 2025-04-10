@@ -1,4 +1,4 @@
-body {
+body {                                                               /* Apply font, center content and add padding to simulate page margins */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f4f9;
     color: #2c3e50;
@@ -7,7 +7,7 @@ body {
     padding: 40px;
 }
 
-.a4-container {
+.a4-container {                                                     /* This container simulates the width and appearance of an A4 paper */
     background-color: #ffffff;
     width: 794px;
     padding: 40px;
@@ -15,40 +15,40 @@ body {
     border-radius: 8px;
 }
 
-.header {
+.header {                                                          /* Align name, role on left and profile image on right */
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.profile-pic {
+.profile-pic {                                                     /* Profile picture styling */
     width: 130px;
     border-radius: 10px;
 }
 
-h1 {
+h1 {                                                               /* Main name heading */
     margin-bottom: 5px;
     font-size: 28px;
 }
 
-h3 {
+h3 {                                                               /* Role subtitle */
     font-size: 18px;
     margin-top: 0;
     color: #555;
 }
 
-.section {
+.section {                                                         /* Section blocks like Contact, Education, etc. */
     margin-top: 30px;
 }
 
-h2 {
+h2 {                                                               /* Section titles styling */
     border-bottom: 2px solid #2980b9;
     padding-bottom: 5px;
     color: #2980b9;
     margin-bottom: 10px;
 }
 
-ul {
+ul {                                                              /* Bulleted lists styling*/
     margin: 0;
     padding-left: 20px;
 }
@@ -57,18 +57,18 @@ ul {
     line-height: 1.6;
 }
 
-.contact-row {
+.contact-row {                                                   /* Contact row with two side-by-side columns */
     display: flex;
     justify-content: space-between;
     gap: 40px;
     margin-top: 10px;
 }
 
-.contact-col {
+.contact-col {                                                  /* Each contact column takes equal width */
     flex: 1;
     line-height: 1.6;
 }
 
-.experience-entry {
+.experience-entry {                                             /* Add spacing between each job entry */
     margin-bottom: 15px;
 }
