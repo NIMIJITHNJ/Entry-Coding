@@ -28,7 +28,7 @@ def resume(request):
             {'period': 'Feb 2025 – Present', 'position': 'Python Developer Intern', 'company': 'CodeNest AI'},            
             {'period': '2011 – 2024', 'position': 'Postal Assistant', 'company': 'India Post'},
         ],
-        'gender': 'female',
+        'gender': 'male',
         'references': 'Available upon request',
     }
     return render(request, 'resume.html', resumeData)
