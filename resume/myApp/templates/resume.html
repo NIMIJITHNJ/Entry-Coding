@@ -13,7 +13,11 @@
                 <h1>{{ name }}</h1>
                 <h3>{{ role }}</h3>
             </div>
-            <img src="{% static 'images/Nimijith.jpg' %}" alt="Profile Image" class="profile-pic">
+                {% if gender == "male" %}
+                <img src="{% static 'images/male.png' %}" alt="Profile Image" class="profile-pic">
+                {% else %}
+                <img src="{% static 'images/female.png' %}" alt="Profile Image" class="profile-pic">
+                {% endif %}
         </div>
 
         <div class="section">
