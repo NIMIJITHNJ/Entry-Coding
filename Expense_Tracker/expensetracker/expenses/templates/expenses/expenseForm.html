@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense Form</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <style>
+    body {
+      background: #0d0d0d;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+    }
+    .form-container {
+      background: #111;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #0ef;
+      width: 400px;
+    }
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #222;
+      color: white;
+    }
+    .form-buttons {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .form-buttons button, .form-buttons a {
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-save {
+      background: #0ef;
+      color: black;
+      font-weight: bold;
+    }
+    .btn-cancel {
+      background: #888;
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>{% if expense.pk %}Edit Expense{% else %}Add New Expense{% endif %}</h2>
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      {{ form.name.label_tag }}
+      {{ form.name }}
+    </div>
+    <div class="form-group">
+      {{ form.amount.label_tag }}
+      {{ form.amount }}
+    </div>
+    <div class="form-group">
+      {{ form.category.label_tag }}
+      {{ form.category }}
+    </div>
+    <div class="form-group">
+      {{ form.date.label_tag }}
+      {{ form.date }}
+    </div>
+    <div class="form-group">
+      {{ form.description.label_tag }}
+      {{ form.description }}
+    </div>
+    <div class="form-buttons">
+      <button type="submit" class="btn-save">Save</button>
+      <a href="{% url 'expenseList' %}" class="btn-cancel">Cancel</a>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>

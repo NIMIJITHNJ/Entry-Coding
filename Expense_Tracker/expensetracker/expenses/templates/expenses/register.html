@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+<div class="wrapper">
+  <form method="post" action="">
+    {% csrf_token %}
+    <h2>Register</h2>
+    <div class="input-group">
+      <input type="text" name="username" required>
+      <label>Username</label>
+    </div>
+    <div class="input-group">
+      <input type="email" name="email" required>
+      <label>Email</label>
+    </div>
+    <div class="input-group">
+        <input type="password" id="password1" name="password1" required>
+        <label>Password</label>
+        <span class="toggle-password" onclick="togglePassword('password1', this)">👁️</span>
+    </div>
+    <div class="input-group">
+        <input type="password" id="password2" name="password2" required>
+        <label>Confirm Password</label>
+        <span class="toggle-password" onclick="togglePassword('password2', this)">👁️</span>
+    </div>    
+    <div class="remember">
+      <label><input type="checkbox" required> I agree to the terms & conditions</label>
+    </div>
+    {% if form.errors and form.is_bound %}
+    <div class="error-message">
+      {% for field in form %}
+        {% for error in field.errors %}
+          <p>{{ error }}</p>
+        {% endfor %}
+      {% endfor %}
+      {% for error in form.non_field_errors %}
+        <p>{{ error }}</p>
+      {% endfor %}
+    </div>
+    {% endif %}       
+    <button type="submit">Register</button>
+    <div class="signUp-link">
+      <p>Already have an account? <a href="{% url 'login' %}" class="signInBtn-link">Login</a></p>
+    </div>    
+  </form>
+</div>
+<script src="{% static 'script.js' %}"></script>
+</body>
+</html>
